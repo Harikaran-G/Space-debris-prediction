@@ -2,6 +2,9 @@
 
 A high-fidelity 3D WebGL aerospace command center for monitoring active satellites, debris fragments, rocket bodies, and predicting real-time conjunction encounters using live CelesTrak ephemeris data.
 
+install for the UI:
+npx skills add Leonxlnx/taste-skill
+
 ---
 
 ## 🚀 Live Working Model (Zero Mock Data)
