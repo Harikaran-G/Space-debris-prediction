@@ -1,0 +1,17 @@
+services:
+  space-tracker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: orbital_space_debris_tracker
+    ports:
+      - "3000:80"
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost/"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 5s

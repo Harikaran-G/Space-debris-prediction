@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+  
+  body {
+    background-color: #1A1A1D;
+    color: #FEFFFF;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    letter-spacing: -0.01em;
+  }
+}
+
+/* Precision technical scrollbar in IN PIECES palette */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1A1A1D;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4E4E50;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #950740;
+}
+
+/* Clean High-Density Engineering Surfaces */
+.surface-card {
+  background-color: #232328;
+  border: 1px solid #4E4E50;
+  border-radius: 6px;
+}
+
+.surface-card-hover {
+  background-color: #232328;
+  border: 1px solid #4E4E50;
+  border-radius: 6px;
+  transition: border-color 0.12s ease, background-color 0.12s ease;
+}
+
+.surface-card-hover:hover {
+  border-color: #950740;
+  background-color: #2A2A30;
+}
+
+/* Tabular figures for telemetry numbers */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+/* Engineering semantic badges */
+.badge-low {
+  background-color: rgba(56, 189, 248, 0.15);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  color: #38BDF8;
+}
+
+.badge-medium {
+  background-color: rgba(245, 158, 11, 0.18);
+  border: 1px solid rgba(245, 158, 11, 0.45);
+  color: #FBBF24;
+}
+
+.badge-high {
+  background-color: rgba(239, 68, 68, 0.2);
+  border: 1px solid rgba(239, 68, 68, 0.5);
+  color: #F87171;
+}
+
+.badge-critical {
+  background-color: rgba(225, 29, 72, 0.25);
+  border: 1px solid rgba(225, 29, 72, 0.6);
+  color: #FB7185;
+}
+
+/* ========================================================================= */
+/* DYNAMIC RISK LEVEL THEMES: CRITICAL / DANGER (RED), MEDIUM (ORANGE), NORMAL (BLUE) */
+/* ========================================================================= */
+
+/* 1. CRITICAL / DANGER (RED THEME) */
+.theme-critical {
+  background: radial-gradient(120% 90% at 50% 0%, #2A060C 0%, #190407 50%, #0F0204 100%) !important;
+  transition: background 0.35s ease, border-color 0.35s ease;
+}
+
+.theme-critical .surface-card {
+  background-color: rgba(38, 9, 14, 0.85);
+  border-color: rgba(239, 68, 68, 0.4);
+  box-shadow: 0 0 16px rgba(239, 68, 68, 0.08);
+}
+
+.theme-critical .surface-card-hover:hover {
+  border-color: #EF4444;
+  background-color: rgba(56, 14, 21, 0.95);
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.25);
+}
+
+/* 2. MEDIUM RISK (ORANGE THEME) */
+.theme-medium {
+  background: radial-gradient(120% 90% at 50% 0%, #2E1504 0%, #1C0C02 50%, #100601 100%) !important;
+  transition: background 0.35s ease, border-color 0.35s ease;
+}
+
+.theme-medium .surface-card {
+  background-color: rgba(42, 20, 5, 0.85);
+  border-color: rgba(245, 158, 11, 0.4);
+  box-shadow: 0 0 16px rgba(245, 158, 11, 0.08);
+}
+
+.theme-medium .surface-card-hover:hover {
+  border-color: #F59E0B;
+  background-color: rgba(60, 28, 7, 0.95);
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.25);
+}
+
+/* 3. NORMAL / NOMINAL (BLUE THEME) */
+.theme-normal {
+  background: radial-gradient(120% 90% at 50% 0%, #081B38 0%, #051022 50%, #020712 100%) !important;
+  transition: background 0.35s ease, border-color 0.35s ease;
+}
+
+.theme-normal .surface-card {
+  background-color: rgba(9, 26, 52, 0.85);
+  border-color: rgba(56, 189, 248, 0.35);
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.08);
+}
+
+.theme-normal .surface-card-hover:hover {
+  border-color: #38BDF8;
+  background-color: rgba(14, 39, 78, 0.95);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.25);
+}
