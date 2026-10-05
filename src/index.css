@@ -6,12 +6,23 @@
   :root {
     color-scheme: dark;
   }
-  
+
+  *, *::before, *::after {
+    font-family: 'Roboto', sans-serif !important;
+  }
+
   body {
     background-color: #1A1A1D;
     color: #FEFFFF;
-    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Roboto', sans-serif !important;
     letter-spacing: -0.01em;
+  }
+
+  /* Global Icon Removal */
+  svg.lucide,
+  .lucide,
+  [class*="lucide-"] {
+    display: none !important;
   }
 }
 

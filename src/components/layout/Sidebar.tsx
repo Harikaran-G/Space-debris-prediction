@@ -98,10 +98,9 @@ export const Sidebar: React.FC<SidebarProps> = ({
         <div className="flex flex-col shrink-0">
           <div className="h-12 flex items-center justify-between px-3.5 border-b border-slate-700">
             <div className={`flex items-center gap-2.5 overflow-hidden ${isCollapsed ? 'md:justify-center md:w-full' : ''}`}>
-              <div className="w-7 h-7 rounded bg-brand flex items-center justify-center text-white shrink-0">
-                <Rocket className="w-3.5 h-3.5" />
-              </div>
-              {(!isCollapsed || isMobileOpen) && (
+              {isCollapsed && !isMobileOpen ? (
+                <span className="font-bold text-xs text-brand">SDA</span>
+              ) : (
                 <div className="flex flex-col">
                   <span className="font-semibold text-xs tracking-tight text-slate-100">
                     Space Debris
@@ -116,10 +115,10 @@ export const Sidebar: React.FC<SidebarProps> = ({
             {/* Mobile Close Button */}
             <button
               onClick={onCloseMobile}
-              className="md:hidden p-1.5 text-slate-400 hover:text-slate-200 rounded"
+              className="md:hidden p-1.5 text-slate-400 hover:text-slate-200 rounded text-xs"
               aria-label="Close Sidebar"
             >
-              <X className="w-5 h-5" />
+              ✕
             </button>
           </div>
 
@@ -197,7 +196,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
             className="hidden md:flex w-full items-center justify-center p-1 text-slate-500 hover:text-slate-300 rounded hover:bg-slate-800 text-xs"
             title={isCollapsed ? 'Expand Sidebar' : 'Collapse Sidebar'}
           >
-            {isCollapsed ? <ChevronRight className="w-4 h-4" /> : <ChevronLeft className="w-4 h-4" />}
+            {isCollapsed ? <span>»</span> : <span>«</span>}
           </button>
         </div>
       </aside>

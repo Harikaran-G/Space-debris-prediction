@@ -24,7 +24,7 @@ export const MLModelPage: React.FC = () => {
 
   return (
     <div className="space-y-4 font-mono text-xs">
-      
+
       {/* Page Title */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-2 border-b border-slate-700">
         <div>
@@ -39,11 +39,10 @@ export const MLModelPage: React.FC = () => {
         {/* Live Backend Connection Toggle */}
         <button
           onClick={() => setIsBackendConnected(!isBackendConnected)}
-          className={`px-3 py-1.5 rounded text-xs font-sans font-medium border transition-colors ${
-            isBackendConnected
+          className={`px-3 py-1.5 rounded text-xs font-sans font-medium border transition-colors ${isBackendConnected
               ? 'bg-emerald-950/60 text-emerald-300 border-emerald-500/50'
               : 'bg-slate-800 text-slate-300 border-slate-700 hover:text-white'
-          }`}
+            }`}
         >
           {isBackendConnected ? '● Model Engine Online' : '○ Reconnect Model Engine'}
         </button>
@@ -132,7 +131,7 @@ export const MLModelPage: React.FC = () => {
 
       {/* Feature Importance & ROC Curve */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        
+
         {/* Global Feature Importance */}
         <div className="surface-card p-4 space-y-3">
           <h3 className="font-semibold text-xs text-slate-200 uppercase tracking-wide border-b border-slate-750 pb-2 flex items-center gap-1.5">
@@ -169,8 +168,8 @@ export const MLModelPage: React.FC = () => {
             <ResponsiveContainer width="100%" height="100%">
               <LineChart data={metrics.rocCurveData} margin={{ top: 10, right: 15, left: -20, bottom: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#1F2937" />
-                <XAxis dataKey="fpr" stroke="#6B7280" tick={{ fontSize: 10, fontFamily: 'monospace' }} unit=" (FPR)" />
-                <YAxis stroke="#6B7280" domain={[0, 1]} tick={{ fontSize: 10, fontFamily: 'monospace' }} unit=" (TPR)" />
+                <XAxis dataKey="fpr" stroke="#6B7280" tick={{ fontSize: 10, fontFamily: '"Roboto", sans-serif' }} unit=" (FPR)" />
+                <YAxis stroke="#6B7280" domain={[0, 1]} tick={{ fontSize: 10, fontFamily: '"Roboto", sans-serif' }} unit=" (TPR)" />
                 <Tooltip />
                 <Line type="monotone" dataKey="tpr" name="True Positive Rate" stroke="#3B82F6" strokeWidth={2} dot={{ r: 2 }} />
               </LineChart>

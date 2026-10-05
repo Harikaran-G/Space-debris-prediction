@@ -53,17 +53,16 @@ export const ObjectDetailsView: React.FC<ObjectDetailsViewProps> = ({
 
   return (
     <div className="space-y-4 font-mono">
-      
+
       {/* Top Banner & Header */}
       <div className="glass-panel-glow rounded-xl p-3.5 sm:p-4 border border-cyan-500/30 shadow-glass">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 pb-3 border-b border-slate-800">
-          
+
           <div className="flex items-center gap-3">
-            <div className={`p-2.5 rounded-xl border shrink-0 ${
-              object.type === 'Satellite'
+            <div className={`p-2.5 rounded-xl border shrink-0 ${object.type === 'Satellite'
                 ? 'bg-blue-950/80 border-blue-500/40 text-blue-400'
                 : 'bg-amber-950/80 border-amber-500/40 text-amber-400'
-            }`}>
+              }`}>
               {object.type === 'Satellite' ? <Satellite className="w-5 h-5 sm:w-6 sm:h-6" /> : <Trash2 className="w-5 h-5 sm:w-6 sm:h-6" />}
             </div>
             <div>
@@ -71,13 +70,12 @@ export const ObjectDetailsView: React.FC<ObjectDetailsViewProps> = ({
                 <h1 className="text-base sm:text-lg font-orbitron font-bold text-slate-100">
                   {object.name}
                 </h1>
-                <span className={`px-2 py-0.5 text-[10px] font-bold rounded ${
-                  object.riskLevel === 'Critical'
+                <span className={`px-2 py-0.5 text-[10px] font-bold rounded ${object.riskLevel === 'Critical'
                     ? 'bg-red-500/20 text-red-400 border border-red-500/60'
                     : object.riskLevel === 'High'
-                    ? 'bg-orange-500/20 text-orange-400 border border-orange-500/60'
-                    : 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/60'
-                }`}>
+                      ? 'bg-orange-500/20 text-orange-400 border border-orange-500/60'
+                      : 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/60'
+                  }`}>
                   {object.riskLevel.toUpperCase()} RISK ({object.riskProbability}%)
                 </span>
               </div>
@@ -119,11 +117,10 @@ export const ObjectDetailsView: React.FC<ObjectDetailsViewProps> = ({
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id as TabType)}
-                className={`flex items-center gap-1.5 px-3 py-2 min-h-[40px] rounded-lg text-xs font-semibold whitespace-nowrap transition-all shrink-0 ${
-                  isActive
+                className={`flex items-center gap-1.5 px-3 py-2 min-h-[40px] rounded-lg text-xs font-semibold whitespace-nowrap transition-all shrink-0 ${isActive
                     ? 'bg-cyan-950 text-cyan-300 border border-cyan-500/50 shadow-glow-cyan'
                     : 'text-slate-400 hover:text-slate-200 hover:bg-space-850 border border-transparent'
-                }`}
+                  }`}
               >
                 <Icon className="w-3.5 h-3.5" />
                 <span>{tab.label}</span>
@@ -136,7 +133,7 @@ export const ObjectDetailsView: React.FC<ObjectDetailsViewProps> = ({
       {/* Tab 1: Overview */}
       {activeTab === 'overview' && (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-          
+
           <div className="glass-panel rounded-xl p-4 space-y-3">
             <div className="text-xs font-orbitron font-bold text-cyan-300 flex items-center gap-1.5 pb-2 border-b border-slate-800">
               <Orbit className="w-4 h-4" />
@@ -232,8 +229,8 @@ export const ObjectDetailsView: React.FC<ObjectDetailsViewProps> = ({
             <ResponsiveContainer width="100%" height="100%">
               <LineChart data={futureData} margin={{ top: 10, right: 15, left: -20, bottom: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#1e293b" />
-                <XAxis dataKey="epoch" stroke="#64748b" tick={{ fontSize: 10, fontFamily: 'monospace' }} />
-                <YAxis stroke="#64748b" domain={['auto', 'auto']} tick={{ fontSize: 10, fontFamily: 'monospace' }} unit="km" />
+                <XAxis dataKey="epoch" stroke="#64748b" tick={{ fontSize: 10, fontFamily: '"Roboto", sans-serif' }} />
+                <YAxis stroke="#64748b" domain={['auto', 'auto']} tick={{ fontSize: 10, fontFamily: '"Roboto", sans-serif' }} unit="km" />
                 <Tooltip />
                 <Line type="monotone" dataKey="altitude" name="Altitude (km)" stroke="#38bdf8" strokeWidth={2.5} dot={{ r: 4 }} />
               </LineChart>
@@ -266,11 +263,10 @@ export const ObjectDetailsView: React.FC<ObjectDetailsViewProps> = ({
                       Closest Approach: <strong className="text-slate-200">{c.closestApproachDistance} km</strong> • TCA: <strong className="text-amber-300">{c.timeToClosestApproach}</strong>
                     </div>
                   </div>
-                  <span className={`px-2 py-0.5 rounded text-xs font-bold shrink-0 ${
-                    c.riskLevel === 'Critical'
+                  <span className={`px-2 py-0.5 rounded text-xs font-bold shrink-0 ${c.riskLevel === 'Critical'
                       ? 'bg-red-500/20 text-red-400 border border-red-500/60'
                       : 'bg-orange-500/20 text-orange-400 border border-orange-500/60'
-                  }`}>
+                    }`}>
                     {c.riskLevel.toUpperCase()} ({c.collisionProbability}%)
                   </span>
                 </div>
@@ -290,8 +286,8 @@ export const ObjectDetailsView: React.FC<ObjectDetailsViewProps> = ({
             <ResponsiveContainer width="100%" height="100%">
               <LineChart data={historyData} margin={{ top: 10, right: 15, left: -20, bottom: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#1e293b" />
-                <XAxis dataKey="date" stroke="#64748b" tick={{ fontSize: 10, fontFamily: 'monospace' }} />
-                <YAxis stroke="#64748b" domain={[0, 100]} tick={{ fontSize: 10, fontFamily: 'monospace' }} unit="%" />
+                <XAxis dataKey="date" stroke="#64748b" tick={{ fontSize: 10, fontFamily: '"Roboto", sans-serif' }} />
+                <YAxis stroke="#64748b" domain={[0, 100]} tick={{ fontSize: 10, fontFamily: '"Roboto", sans-serif' }} unit="%" />
                 <Tooltip />
                 <Line type="monotone" dataKey="risk" name="Risk %" stroke="#f97316" strokeWidth={2} dot={{ r: 4 }} />
               </LineChart>

@@ -81,21 +81,16 @@ export const RiskTrendChart: React.FC = () => {
 
   return (
     <div className="surface-card p-4 flex flex-col h-full">
-      
+
       {/* Header and Filter Buttons */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 pb-2 mb-2 border-b border-slate-700">
-        <div className="flex items-center gap-2">
-          <div className="p-1.5 rounded bg-slate-800 border border-slate-700 text-brand">
-            <TrendingUp className="w-4 h-4" />
-          </div>
-          <div>
-            <h3 className="font-semibold text-xs tracking-wide text-slate-100 uppercase">
-              Conjunction Risk Probability Evolution
-            </h3>
-            <p className="text-[10px] text-slate-400">
-              Observed telemetry trajectory vs. ML propagated probability
-            </p>
-          </div>
+        <div>
+          <h3 className="font-semibold text-xs tracking-wide text-slate-100 uppercase">
+            Conjunction Risk Probability Evolution
+          </h3>
+          <p className="text-[10px] text-slate-400">
+            Observed telemetry trajectory vs. ML propagated probability
+          </p>
         </div>
 
         {/* Time horizon pill selector */}
@@ -104,11 +99,10 @@ export const RiskTrendChart: React.FC = () => {
             <button
               key={range}
               onClick={() => setTimeRange(range)}
-              className={`px-2 py-0.5 rounded font-medium transition-colors ${
-                timeRange === range
+              className={`px-2 py-0.5 rounded font-medium transition-colors ${timeRange === range
                   ? 'bg-slate-700 text-brand font-semibold border border-brand/40'
                   : 'text-slate-400 hover:text-slate-200'
-              }`}
+                }`}
             >
               {range.toUpperCase()}
             </button>
@@ -124,19 +118,19 @@ export const RiskTrendChart: React.FC = () => {
             <XAxis
               dataKey="time"
               stroke="#8EBDBA"
-              tick={{ fontSize: 10, fontFamily: 'monospace' }}
+              tick={{ fontSize: 10, fontFamily: '"Roboto", sans-serif' }}
             />
             <YAxis
               stroke="#8EBDBA"
               domain={[0, 100]}
-              tick={{ fontSize: 10, fontFamily: 'monospace' }}
+              tick={{ fontSize: 10, fontFamily: '"Roboto", sans-serif' }}
               unit="%"
             />
             <Tooltip content={<CustomTooltip />} />
             <Legend
-              wrapperStyle={{ fontSize: '11px', fontFamily: 'monospace', paddingTop: '6px' }}
+              wrapperStyle={{ fontSize: '11px', fontFamily: '"Roboto", sans-serif', paddingTop: '6px' }}
             />
-            
+
             {/* Critical Threshold Line */}
             <ReferenceLine y={85} stroke="#C3073F" strokeDasharray="4 4" label={{ value: 'Critical (85%)', fill: '#C3073F', fontSize: 9, position: 'insideTopRight' }} />
             <ReferenceLine y={60} stroke="#950740" strokeDasharray="4 4" label={{ value: 'High (60%)', fill: '#950740', fontSize: 9, position: 'insideTopRight' }} />

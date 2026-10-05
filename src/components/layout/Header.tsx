@@ -79,13 +79,12 @@ export const Header: React.FC<HeaderProps> = ({
 
           {/* Global Search Bar */}
           <div className="relative w-40 sm:w-56 lg:w-72">
-            <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-slate-400" />
             <input
               type="text"
               placeholder="Search objects, NORAD..."
               value={searchQuery}
               onChange={(e) => onSearch(e.target.value)}
-              className="w-full pl-8 pr-3 py-1.5 text-xs bg-slate-800 border border-slate-700 rounded text-slate-200 placeholder-slate-500 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500"
+              className="w-full px-3 py-1.5 text-xs bg-slate-800 border border-slate-700 rounded text-slate-200 placeholder-slate-500 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500"
             />
           </div>
 
@@ -101,20 +100,19 @@ export const Header: React.FC<HeaderProps> = ({
             className="flex items-center gap-1.5 px-2.5 py-1.5 text-xs bg-slate-800 hover:bg-slate-750 text-slate-300 hover:text-white border border-slate-700 rounded transition-colors active:scale-98 disabled:opacity-50"
             title="Refresh orbital catalog and risk predictions"
           >
-            <RefreshCw className={`w-3.5 h-3.5 ${isRefreshing ? 'animate-spin text-brand-400' : ''}`} />
-            <span className="hidden sm:inline">Refresh</span>
+            <span>{isRefreshing ? 'Refreshing...' : 'Refresh'}</span>
           </button>
 
           {/* Alerts / Notifications */}
           {onOpenAlerts && (
             <button
               onClick={onOpenAlerts}
-              className="relative p-2 text-slate-400 hover:text-slate-200 bg-slate-800 border border-slate-700 rounded transition-colors"
+              className="relative px-2.5 py-1.5 text-xs text-slate-300 hover:text-white bg-slate-800 border border-slate-700 rounded transition-colors flex items-center gap-1.5"
               title="View Conjunction Alerts"
             >
-              <Bell className="w-3.5 h-3.5" />
+              <span>Alerts</span>
               {alertCount > 0 && (
-                <span className="absolute -top-1 -right-1 px-1 min-w-[14px] h-[14px] rounded-full bg-brand-500 text-[9px] font-bold text-white flex items-center justify-center">
+                <span className="px-1.5 py-0.2 min-w-[14px] h-[14px] rounded-full bg-brand-500 text-[9px] font-bold text-white flex items-center justify-center">
                   {alertCount}
                 </span>
               )}
@@ -124,16 +122,16 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Settings Shortcut */}
           <button
             onClick={onOpenSettings}
-            className="p-2 text-slate-400 hover:text-slate-200 bg-slate-800 border border-slate-700 rounded transition-colors hidden sm:flex"
+            className="px-2.5 py-1.5 text-xs text-slate-300 hover:text-white bg-slate-800 border border-slate-700 rounded transition-colors hidden sm:flex items-center"
             title="System Settings"
           >
-            <SlidersHorizontal className="w-3.5 h-3.5" />
+            <span>Settings</span>
           </button>
 
           {/* Operator Profile */}
           <div className="flex items-center gap-2 pl-2 border-l border-slate-700">
-            <div className="w-7 h-7 rounded bg-slate-700 flex items-center justify-center text-slate-300 font-medium text-xs">
-              <User className="w-3.5 h-3.5" />
+            <div className="px-2 py-1 rounded bg-slate-700 flex items-center justify-center text-slate-300 font-medium text-xs">
+              <span>OP</span>
             </div>
           </div>
 

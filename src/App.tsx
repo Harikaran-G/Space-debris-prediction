@@ -398,7 +398,6 @@ export function App() {
                   {/* System & Data Source Footer Panel */}
                   <div className="surface-card p-3 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs font-mono text-slate-400">
                     <div className="flex items-center gap-2">
-                      <Database className="w-3.5 h-3.5 text-blue-400" />
                       <span>Data Source: <strong className="text-slate-200">{dataSource.name}</strong></span>
                       <span className="text-slate-600">|</span>
                       <span>Objects Loaded: <strong className="text-slate-200">{dataSource.totalObjects.toLocaleString()}</strong></span>

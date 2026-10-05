@@ -23,8 +23,7 @@ export const CriticalConjunctions: React.FC<CriticalConjunctionsProps> = ({
       
       {/* Header */}
       <div className="flex items-center justify-between gap-2 mb-3 pb-2 border-b border-slate-700">
-        <div className="flex items-center gap-2">
-          <ShieldAlert className="w-4 h-4 text-red-400" />
+        <div>
           <h3 className="font-semibold text-xs text-slate-100 uppercase tracking-wide">
             Critical Conjunctions
           </h3>
@@ -39,7 +38,6 @@ export const CriticalConjunctions: React.FC<CriticalConjunctionsProps> = ({
       <div className="space-y-2.5 overflow-y-auto max-h-[440px] pr-0.5 flex-1">
         {conjunctions.length === 0 ? (
           <div className="p-8 text-center text-slate-500 font-mono text-xs bg-slate-850/60 border border-slate-800 rounded-lg flex flex-col items-center justify-center gap-2 h-full min-h-[220px]">
-            <ShieldAlert className="w-8 h-8 text-slate-600 opacity-60" />
             <span className="font-semibold text-slate-300">No Critical Conjunctions</span>
             <span className="text-[11px] text-slate-500 max-w-xs">All orbital trajectories nominal or awaiting data ingestion.</span>
           </div>
@@ -74,7 +72,7 @@ export const CriticalConjunctions: React.FC<CriticalConjunctionsProps> = ({
                 >
                   {conj.objectA.name}
                 </button>
-                <ArrowRight className="w-3 h-3 text-slate-500 shrink-0" />
+                <span className="text-slate-500 shrink-0">→</span>
                 <button
                   onClick={() => onOpenDrawer(conj.objectB)}
                   className="font-medium text-brand hover:underline truncate text-left"

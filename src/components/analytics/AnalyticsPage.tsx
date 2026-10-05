@@ -74,7 +74,7 @@ export const AnalyticsPage: React.FC = () => {
 
   return (
     <div className="space-y-4 font-mono text-xs">
-      
+
       {/* Title & Date Range */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-2 border-b border-slate-700">
         <div>
@@ -97,11 +97,10 @@ export const AnalyticsPage: React.FC = () => {
             <button
               key={d.id}
               onClick={() => setDateRange(d.id as any)}
-              className={`px-2.5 py-1 rounded text-xs font-medium transition-colors ${
-                dateRange === d.id
+              className={`px-2.5 py-1 rounded text-xs font-medium transition-colors ${dateRange === d.id
                   ? 'bg-blue-600 text-white'
                   : 'text-slate-400 hover:text-slate-200'
-              }`}
+                }`}
             >
               {d.label}
             </button>
@@ -111,7 +110,7 @@ export const AnalyticsPage: React.FC = () => {
 
       {/* Row 1: Altitude Population & Risk Donut */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        
+
         {/* Chart 1: Altitude */}
         <div className="surface-card p-4 space-y-3 flex flex-col">
           <div className="flex items-center justify-between border-b border-slate-750 pb-2">
@@ -124,10 +123,10 @@ export const AnalyticsPage: React.FC = () => {
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={altitudeData} margin={{ top: 10, right: 15, left: -15, bottom: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#1F2937" />
-                <XAxis dataKey="band" stroke="#6B7280" tick={{ fontSize: 10, fontFamily: 'monospace' }} />
-                <YAxis stroke="#6B7280" tick={{ fontSize: 10, fontFamily: 'monospace' }} />
+                <XAxis dataKey="band" stroke="#6B7280" tick={{ fontSize: 10, fontFamily: '"Roboto", sans-serif' }} />
+                <YAxis stroke="#6B7280" tick={{ fontSize: 10, fontFamily: '"Roboto", sans-serif' }} />
                 <Tooltip />
-                <Legend wrapperStyle={{ fontSize: '11px', fontFamily: 'Inter, sans-serif' }} />
+                <Legend wrapperStyle={{ fontSize: '11px', fontFamily: '"Roboto", sans-serif' }} />
                 <Bar dataKey="satellites" name="Satellites" fill="#3B82F6" radius={[2, 2, 0, 0]} />
                 <Bar dataKey="debris" name="Space Debris" fill="#F59E0B" radius={[2, 2, 0, 0]} />
               </BarChart>
@@ -185,7 +184,7 @@ export const AnalyticsPage: React.FC = () => {
 
       {/* Row 2: Close Approaches Timeline & Velocity */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        
+
         {/* Chart 3: Close Approaches */}
         <div className="surface-card p-4 space-y-3 flex flex-col">
           <div className="flex items-center justify-between border-b border-slate-750 pb-2">
@@ -198,10 +197,10 @@ export const AnalyticsPage: React.FC = () => {
             <ResponsiveContainer width="100%" height="100%">
               <LineChart data={closeApproachesOverTime} margin={{ top: 10, right: 15, left: -20, bottom: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#1F2937" />
-                <XAxis dataKey="day" stroke="#6B7280" tick={{ fontSize: 10, fontFamily: 'monospace' }} />
-                <YAxis stroke="#6B7280" tick={{ fontSize: 10, fontFamily: 'monospace' }} />
+                <XAxis dataKey="day" stroke="#6B7280" tick={{ fontSize: 10, fontFamily: '"Roboto", sans-serif' }} />
+                <YAxis stroke="#6B7280" tick={{ fontSize: 10, fontFamily: '"Roboto", sans-serif' }} />
                 <Tooltip />
-                <Legend wrapperStyle={{ fontSize: '11px', fontFamily: 'Inter, sans-serif' }} />
+                <Legend wrapperStyle={{ fontSize: '11px', fontFamily: '"Roboto", sans-serif' }} />
                 <Line type="monotone" dataKey="encounters" name="Total Approaches" stroke="#3B82F6" strokeWidth={2} dot={{ r: 3 }} />
                 <Line type="monotone" dataKey="critical" name="High Risk (<1km)" stroke="#EF4444" strokeWidth={2} dot={{ r: 3 }} />
               </LineChart>
@@ -221,8 +220,8 @@ export const AnalyticsPage: React.FC = () => {
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={velocityByIncData} margin={{ top: 10, right: 15, left: -10, bottom: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#1F2937" />
-                <XAxis dataKey="incDiff" stroke="#6B7280" tick={{ fontSize: 9.5, fontFamily: 'monospace' }} />
-                <YAxis stroke="#6B7280" unit=" km/s" tick={{ fontSize: 10, fontFamily: 'monospace' }} />
+                <XAxis dataKey="incDiff" stroke="#6B7280" tick={{ fontSize: 9.5, fontFamily: '"Roboto", sans-serif' }} />
+                <YAxis stroke="#6B7280" unit=" km/s" tick={{ fontSize: 10, fontFamily: '"Roboto", sans-serif' }} />
                 <Tooltip />
                 <Bar dataKey="avgVel" name="Avg Velocity (km/s)" fill="#F97316" radius={[2, 2, 0, 0]} />
               </BarChart>
@@ -244,8 +243,8 @@ export const AnalyticsPage: React.FC = () => {
           <ResponsiveContainer width="100%" height="100%">
             <BarChart data={inclinationHistogram} margin={{ top: 10, right: 15, left: -15, bottom: 0 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#1F2937" />
-              <XAxis dataKey="band" stroke="#6B7280" tick={{ fontSize: 10, fontFamily: 'monospace' }} />
-              <YAxis stroke="#6B7280" tick={{ fontSize: 10, fontFamily: 'monospace' }} />
+              <XAxis dataKey="band" stroke="#6B7280" tick={{ fontSize: 10, fontFamily: '"Roboto", sans-serif' }} />
+              <YAxis stroke="#6B7280" tick={{ fontSize: 10, fontFamily: '"Roboto", sans-serif' }} />
               <Tooltip />
               <Bar dataKey="count" name="Objects Count" fill="#3B82F6" radius={[2, 2, 0, 0]} />
             </BarChart>

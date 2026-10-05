@@ -61,21 +61,16 @@ export const AltitudeDistributionChart: React.FC<AltitudeDistributionChartProps>
 
   return (
     <div className="surface-card p-4 flex flex-col h-full">
-      
+
       {/* Header and Filter */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 pb-2 mb-2 border-b border-slate-700">
-        <div className="flex items-center gap-2">
-          <div className="p-1.5 rounded bg-slate-800 border border-slate-700 text-cyan-400">
-            <BarChart3 className="w-4 h-4" />
-          </div>
-          <div>
-            <h3 className="font-semibold text-xs tracking-wide text-slate-100 uppercase">
-              Orbital Altitude Shell Density
-            </h3>
-            <p className="text-[10px] text-slate-400">
-              LEO object population density categorized by altitude bands
-            </p>
-          </div>
+        <div>
+          <h3 className="font-semibold text-xs tracking-wide text-slate-100 uppercase">
+            Orbital Altitude Shell Density
+          </h3>
+          <p className="text-[10px] text-slate-400">
+            LEO object population density categorized by altitude bands
+          </p>
         </div>
 
         {/* Filter */}
@@ -84,11 +79,10 @@ export const AltitudeDistributionChart: React.FC<AltitudeDistributionChartProps>
             <button
               key={type}
               onClick={() => setFilterType(type)}
-              className={`px-2 py-0.5 rounded font-medium transition-colors ${
-                filterType === type
+              className={`px-2 py-0.5 rounded font-medium transition-colors ${filterType === type
                   ? 'bg-slate-700 text-cyan-300 font-semibold border border-cyan-500/40'
                   : 'text-slate-400 hover:text-slate-200'
-              }`}
+                }`}
             >
               {type === 'All' ? 'ALL OBJECTS' : type === 'Satellite' ? 'SATELLITES' : 'DEBRIS'}
             </button>
@@ -104,15 +98,15 @@ export const AltitudeDistributionChart: React.FC<AltitudeDistributionChartProps>
             <XAxis
               dataKey="band"
               stroke="#8EBDBA"
-              tick={{ fontSize: 9.5, fontFamily: 'monospace' }}
+              tick={{ fontSize: 9.5, fontFamily: '"Roboto", sans-serif' }}
             />
             <YAxis
               stroke="#8EBDBA"
-              tick={{ fontSize: 10, fontFamily: 'monospace' }}
+              tick={{ fontSize: 10, fontFamily: '"Roboto", sans-serif' }}
             />
             <Tooltip content={<CustomTooltip />} />
             <Legend
-              wrapperStyle={{ fontSize: '11px', fontFamily: 'monospace', paddingTop: '6px' }}
+              wrapperStyle={{ fontSize: '11px', fontFamily: '"Roboto", sans-serif', paddingTop: '6px' }}
             />
 
             {(filterType === 'All' || filterType === 'Satellite') && (

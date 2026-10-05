@@ -62,18 +62,13 @@ export const RiskDistributionChart: React.FC<RiskDistributionChartProps> = ({ ob
       
       {/* Header */}
       <div className="flex items-center justify-between pb-2 mb-2 border-b border-slate-700">
-        <div className="flex items-center gap-2">
-          <div className="p-1.5 rounded bg-slate-800 border border-slate-700 text-cyan-400">
-            <PieIcon className="w-4 h-4" />
-          </div>
-          <div>
-            <h3 className="font-semibold text-xs tracking-wide text-slate-100 uppercase">
-              Global Risk Distribution
-            </h3>
-            <p className="text-[10px] text-slate-400">
-              Categorized by collision probability threshold
-            </p>
-          </div>
+        <div>
+          <h3 className="font-semibold text-xs tracking-wide text-slate-100 uppercase">
+            Global Risk Distribution
+          </h3>
+          <p className="text-[10px] text-slate-400">
+            Categorized by collision probability threshold
+          </p>
         </div>
       </div>
 

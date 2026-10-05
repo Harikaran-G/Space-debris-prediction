@@ -50,8 +50,9 @@ export default {
         }
       },
       fontFamily: {
-        mono: ['"JetBrains Mono"', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
-        sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+        mono: ['"Roboto"', 'sans-serif'],
+        sans: ['"Roboto"', 'sans-serif'],
+        serif: ['"Roboto"', 'sans-serif'],
       },
       borderRadius: {
         'sm': '3px',
